@@ -9,5 +9,8 @@ export class ArticlesService {
   getArticles(): Articles[] {
     return ARTICLES;
   }
+  getDetail(){
+    
+  }
   constructor() { }
 }
