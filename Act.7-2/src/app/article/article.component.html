@@ -1,9 +1,38 @@
+<!-- <div class="card" >
+<form>
+  <fieldset disabled>
+    <legend>Ajouter article !</legend>
+    <div class="mb-3">
+      <label for="disabledTextInput" class="form-label">Titre</label>
+      <input type="text" id="disabledTextInput" class="form-control" placeholder="Titre">
+    </div>
+    <div class="mb-3">
+      <label for="disabledTextInput" class="form-label">Déscription</label>
+      <input type="text" id="disabledTextInput" class="form-control" placeholder="Déscription">
+    </div>
+    <div class="mb-3">
+      <label for="disabledTextInput" class="form-label">Auteur</label>
+      <input type="text" id="disabledTextInput" class="form-control" placeholder="Auteur">
+    </div>
+    <div class="mb-3">
+      <label for="disabledTextInput" class="form-label">Date</label>
+      <input type="date" id="disabledTextInput" class="form-control" placeholder="Auteur">
+    </div>
+    <button type="submit" class="btn btn-primary">Ajouter</button>
+  </fieldset>
+</form>
+</div> -->
+
+
+
 <div  class="cardArticles ">
+  <div class="card-body" *ngFor="let item of article">
   <div class="card" style="width: 80rem;">
-    <div class="card-body" *ngFor="let item of article">
-      <h5 >{{item.titre}}</h5>
+    <div>
+      <h5 ><strong>{{item.titre}}</strong></h5>
       <p >{{item.description}}</p>
       <button routerLink="/details/{{item.id}}" type="button" class="btn btn-primary"> Voir plus </button>
     </div>  
+  </div>
   </div>
   </div>
