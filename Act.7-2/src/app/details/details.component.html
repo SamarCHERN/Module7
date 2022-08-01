@@ -1,3 +1,13 @@
-<p>details works!</p>
-
+<div  class="cardDetail" *ngIf="article">
+    <div class="card" style="width: 40rem;">
+        <div class="card-body">
+            <br>
+            <h5 class="card-title">{{article.titre | uppercase}}</h5>
+            <p class="card-text">{{article.description}}</p>
+            <br>
+            <div><span><b>Auteur: </b> </span>{{article.date}}</div>
+            <div><span><b>Commentaires: </b> </span>{{article.commentaires}}</div>
+        </div>
+    </div>
+    </div>
 
