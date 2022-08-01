@@ -1,6 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { ArticlesService } from '../services/articles.service';
 import { Articles } from '../articles';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-details',
@@ -9,12 +10,13 @@ import { Articles } from '../articles';
 })
 export class DetailsComponent implements OnInit {
   // @Input() public deatilsfromarticle;
-  constructor( 
-    // private route :Articles,
-    // private routeservice :ArticlesService
-    ) { }
+  constructor( private router:Router)
+     { }
 
   ngOnInit(): void {
+  }
+  GoToDetails(){
+    this.router.navigate(["/articles"])
   }
 
 }
