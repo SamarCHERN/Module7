@@ -3,6 +3,8 @@ import { ArticlesService } from '../services/articles.service';
 import { Articles } from '../articles';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-details',
@@ -10,10 +12,11 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
-  // @Input() public deatilsfromarticle;
-  article: Articles | undefined;
+
+  article$!:Observable<Articles>
+
   constructor( private router:Router,  private route: ActivatedRoute,
-    private articleService: ArticlesService)
+    private articleService: ArticlesService,private http: HttpClient)
      { }
 
   ngOnInit(): void {
@@ -23,8 +26,7 @@ export class DetailsComponent implements OnInit {
 
   GoToDetails(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.articleService.getDetail(id)
-      .subscribe(article => this.article = article);
+    this.article$=this.articleService.getDetail(id);
   }
 
 }

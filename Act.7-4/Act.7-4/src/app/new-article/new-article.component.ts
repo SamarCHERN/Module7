@@ -24,9 +24,15 @@ export class NewArticleComponent implements OnInit {
     })
 }
  
-  onSubmitForm() : void {
-    this.ArticlesService.addArticle(this.articleform.value);
-    this.router.navigateByUrl('/article');
+  onSubmitForm() {
+    this.ArticlesService.addArticle(this.articleform.value).subscribe();
+    this.router.navigateByUrl('/articles');
   }
-
+  // onSubmitForm() {
+  //   this.ArticlesService.addArticle(this.articleform.value).pipe(
+  //       tap(() => this.router.navigateByUrl('/articles'))
+  //   ).subscribe();
 }
+
+
+

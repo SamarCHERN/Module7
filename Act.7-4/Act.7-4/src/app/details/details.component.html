@@ -1,4 +1,4 @@
-<div  class="cardDetail" *ngIf="article">
+<div  class="cardDetail" *ngIf="article$ | async as article">
     <div class="card" style="width: 60rem;">
         <div class="card-body">
             <br>
@@ -6,7 +6,7 @@
             <p class="card-text">{{article.contenu}}</p>
             <br>
             <div><span><b>Date: </b> </span>{{article.dateDePublication| date: ' d MMMM yyyy'}}</div>
-            <div><span><b>Commentaires: </b> </span>{{article.commentaires}}</div>
+            <!-- <div><span><b>Commentaires: </b> </span>{{article.commentaires}}</div> -->
         </div>
     </div>
     </div>

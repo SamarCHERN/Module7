@@ -3,6 +3,8 @@ import { Articles } from '../articles';
 import { ArticlesService } from '../services/articles.service';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-article',
@@ -15,15 +17,16 @@ export class ArticleComponent implements OnInit {
   auteur!:string;
   dateDePublication!:string;
 
-  article:Articles[]=[];
+  article$!:Observable<Articles[]>
+
+
   constructor(private articlesservice :ArticlesService,private router:Router) { }
 
   ngOnInit(): void {
-    this.getArticles();
+    this.article$= this.articlesservice.getArticles()
+
   }
-  getArticles(){
-    this.article=this.articlesservice.getArticles();
-  }
+
 
   onSubmitForm(form:NgForm){
     console.log(form.value);
