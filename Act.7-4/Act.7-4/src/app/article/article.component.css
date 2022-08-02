@@ -1,0 +1,35 @@
+/* HeroDetailComponent's private CSS styles */
+.card{
+    display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+     
+        box-sizing: border-box;
+            width: 50%;
+            margin: 20px auto;
+            padding: 10px 30px;
+            box-shadow: lightgray 4px 4px 20px;            
+}
+.carde{
+
+        padding: 10px 1185px;
+
+}
+button {
+    display: inline-block;
+    background-color: #7b38d8;
+    border-radius: 5px;
+    border: 2px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 15px;
+    padding: 8px;
+    width: 80px;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }

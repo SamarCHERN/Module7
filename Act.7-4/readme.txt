@@ -1,4 +1,4 @@
-Leçon 7.3 : Formulaires
+Leçon 7.4 : Observables Et HttpClient
 
 # Cloner le dépot 
 https://github.com/SamarCHERN/Module7.git
