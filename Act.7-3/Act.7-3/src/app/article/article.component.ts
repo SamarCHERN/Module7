@@ -11,9 +11,9 @@ import { NgForm } from '@angular/forms';
 })
 export class ArticleComponent implements OnInit {
   titre!:string;
-  description!:string;
+  contenu!:string;
   auteur!:string;
-  date!:string;
+  dateDePublication!:string;
 
   article:Articles[]=[];
   constructor(private articlesservice :ArticlesService,private router:Router) { }

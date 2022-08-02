@@ -15,7 +15,7 @@ export class ArticlesService {
     return of(hero);
   }
   constructor() { }
-  addArticle(formValue: { titre: string, description: string, date: Date, auteur: string }) {
+  addArticle(formValue: { titre: string, contenu: string, dateDePublication: Date, auteur: string }) {
     const article = {
         ...formValue,
         commentaires: '',

@@ -1,8 +1,8 @@
 export interface Articles {
     id: number;
     titre: string;
-    description :string;
-    date :Date;
+    contenu :string;
+    dateDePublication :Date;
     auteur :string;
     commentaires :string;
   }

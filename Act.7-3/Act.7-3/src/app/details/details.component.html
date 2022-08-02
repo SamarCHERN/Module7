@@ -1,11 +1,11 @@
 <div  class="cardDetail" *ngIf="article">
-    <div class="card" style="width: 80rem;">
+    <div class="card" style="width: 60rem;">
         <div class="card-body">
             <br>
             <h5 class="card-title"><strong>{{article.titre }}</strong></h5>
-            <p class="card-text">{{article.description}}</p>
+            <p class="card-text">{{article.contenu}}</p>
             <br>
-            <div><span><b>Date: </b> </span>{{article.date| date: ' d MMMM yyyy'}}</div>
+            <div><span><b>Date: </b> </span>{{article.dateDePublication| date: ' d MMMM yyyy'}}</div>
             <div><span><b>Commentaires: </b> </span>{{article.commentaires}}</div>
         </div>
     </div>

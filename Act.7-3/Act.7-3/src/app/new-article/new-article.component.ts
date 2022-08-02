@@ -17,9 +17,9 @@ export class NewArticleComponent implements OnInit {
   ngOnInit(): void {
     this.articleform=this.formbuilder.group({
       titre:[null,Validators.required],
-      description:[null,Validators.required],
+      contenu:[null,Validators.required],
       auteur:[null],
-      date:[null],
+      dateDePublication:[null],
 
     })
 }
