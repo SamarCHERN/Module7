@@ -1,0 +1,16 @@
+<div  class="carde" style="width: 10rem">
+<button type="button" class="btn btn-primary" (click)="onAddNewArticle()">Ajouter</button>
+</div>
+<div  class="cardArticles ">
+  <div class="card-body" *ngFor="let item of article$ | async ">
+    <div class="card" style="width: 60rem">
+      <div>
+        <h5 ><strong>{{item.titre}}</strong></h5>
+        <p >{{item.contenu}}</p>
+        <button routerLink="/details/{{item.id}}" type="button" class="btn btn-primary"> Voir plus </button>
+      </div>  
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,18 @@
+<div class="form-card">
+    <h2>Connexion</h2>
+    <form [formGroup]="articleform" >
+        <div class="form-group">
+            <label for="titre">Email</label>
+            <input id="titre" type="text" formControlName="username">
+        </div>
+        <div class="form-group">
+            <label for="contenu">Mot de passe</label>
+            <textarea id="contenu" type="text" formControlName="password" rows="4">
+            </textarea>
+        </div>
+
+             <div class="action-buttons">
+            <button type="button" (click)="onSubmitForm()" class="btn btn-primary">Enregistrer</button>
+        </div>
+    </form>
+</div>
