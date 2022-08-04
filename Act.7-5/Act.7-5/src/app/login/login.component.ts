@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ArticlesService } from '../services/articles.service';
+import { AuthService } from '../services/auth.service';
 
 
 @Component({
@@ -10,11 +11,11 @@ import { ArticlesService } from '../services/articles.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  articleform!:FormGroup;
-  constructor(private formbuilder :FormBuilder,private ArticlesService: ArticlesService,private router: Router) { }
+  loginform!:FormGroup;
+  constructor(private formbuilder :FormBuilder,private loginService: AuthService,private router: Router) { }
 
   ngOnInit(): void {
-    this.articleform=this.formbuilder.group({
+    this.loginform=this.formbuilder.group({
       username:[null],
       password:[null],
 
@@ -22,7 +23,7 @@ export class LoginComponent implements OnInit {
 }
  
   onSubmitForm() {
-    this.ArticlesService.login(this.articleform.value);
+    this.loginService.login(this.loginform.value);
     this.router.navigateByUrl('/articles');
   }
 

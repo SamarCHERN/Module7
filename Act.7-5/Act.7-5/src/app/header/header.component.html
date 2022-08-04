@@ -11,10 +11,10 @@
     <div >
       <ul class="navbar-nav me-auto mb-2 mb-md-0" id="navbarNav">
         <li class="nav-item">
-          <a class="nav-link" routerLink="register">S'inscrire</a>
+          <a class="nav-link" routerLink="login" *ngIf ="!( switch())">Se connecter</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="login">Se connecter</a>
+          <a class="nav-link" routerLink="register" (click)="onlogout()" *ngIf ="( switch())">Se déconnecter</a>
         </li>
       </ul>
     </div>

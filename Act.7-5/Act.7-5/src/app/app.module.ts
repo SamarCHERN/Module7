@@ -12,6 +12,10 @@ import { NewArticleComponent } from './new-article/new-article.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { JwtInterceptor } from './interceptor';
+import { JwtHelperService , JWT_OPTIONS } from '@auth0/angular-jwt';
+
+import { AuthGuardService } from './services/auth-guard.service';
+import { RoleGuardService } from './services/role-guard.service';
 
 @NgModule({
   declarations: [
@@ -33,9 +37,9 @@ import { JwtInterceptor } from './interceptor';
     ReactiveFormsModule,
     
   ],
-  providers: [
-    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
-  ],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}, { provide: JWT_OPTIONS , useValue: JWT_OPTIONS},
+    AuthGuardService, JwtHelperService,RoleGuardService
+   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
